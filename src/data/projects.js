@@ -1,5 +1,5 @@
-import Skillforge from "../assets/Skillforge.png";
-import Quizify from "../assets/Quizify.png";
+import Skillforge from "../assets/Skillforge.PNG";
+import Quizify from "../assets/Quizify.PNG";
 export const projects = [
   {
     title: "SkillForge – AI-Powered Career & Learning Planner",
