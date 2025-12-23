@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= BASE ================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    @apply antialiased;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    @apply bg-white text-slate-900 overflow-x-hidden transition-colors duration-500 
+           selection:bg-batBlue/20 selection:text-batBlue;
+  }
+
+  .dark body {
+    @apply bg-batBlack text-slate-100 
+           selection:bg-batYellow/20 selection:text-batYellow;
+  }
+}
+
+/* ================= COMPONENTS ================= */
+@layer components {
+  /* ===== Layout System ===== */
+  .section-wrapper {
+    @apply relative w-full px-4 py-16 md:py-24 lg:py-32 overflow-hidden;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ===== Glass Card (Primary UI Surface) ===== */
+  .glass-card {
+    @apply bg-white/70 dark:bg-batGray/40 backdrop-blur-xl
+           border border-slate-200/60 dark:border-white/5
+           rounded-2xl md:rounded-3xl
+           shadow-xl shadow-slate-200/20 dark:shadow-none
+           transition-all duration-500
+           hover:border-batBlue/30 dark:hover:border-batYellow/30;
+  }
+
+  /* ===== Buttons ===== */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3 rounded-xl font-bold
+           bg-batBlue text-white
+           transition-all duration-300
+           hover:shadow-lg hover:shadow-batBlue/30
+           active:scale-95
+           dark:bg-batYellow dark:text-batBlack
+           dark:hover:shadow-batYellow/20;
+  }
+
+  /* ===== Typography ===== */
+  .heading-hero {
+    @apply text-4xl sm:text-6xl md:text-7xl lg:text-8xl
+           font-black tracking-tight leading-[1.05]
+           text-slate-900 dark:text-white;
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-5xl font-extrabold
+           tracking-tight text-slate-900 dark:text-white;
+  }
+
+  /* ===== Ambient Glow ===== */
+  .bg-glow {
+    @apply absolute rounded-full pointer-events-none
+           blur-[100px] opacity-40 dark:opacity-20
+           mix-blend-multiply dark:mix-blend-screen;
+  }
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800
+         rounded-full border-2 border-transparent bg-clip-content
+         hover:bg-slate-400 dark:hover:bg-slate-700;
+}
