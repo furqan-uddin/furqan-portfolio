@@ -1,4 +1,4 @@
-import Capture from "../assets/Capture.png";
+import Skillforge from "../assets/Skillforge.png";
 import Quizify from "../assets/Quizify.png";
 export const projects = [
   {
@@ -8,7 +8,7 @@ export const projects = [
     tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind", "AI APIs"],
     github: "https://github.com/furqan-uddin/SkillForge",
     demo: "http://skill-forge-bice-seven.vercel.app/",
-    image: Capture,
+    image: Skillforge,
   },
   {
     title: "Quizify – Online Quiz & Certification System",
@@ -24,7 +24,7 @@ export const projects = [
     description:
       "Manual and automated test cases, bug reports, test plans, and test scenarios for different applications following QA industry standards.",
     tech: ["Manual Testing", "Automation Basics", "Test Cases", "Bug Reports"],
-    github: "https://github.com/yourusername/testing-projects",
+    github: "https://github.com/furqan-uddin/SkillForge_SeleniumAutomationProject",
     demo: "",
   },
 ];
