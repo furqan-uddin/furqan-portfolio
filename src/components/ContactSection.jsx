@@ -17,7 +17,10 @@ function ContactSection() {
         import.meta.env.VITE_SERVICEID,
         import.meta.env.VITE_TEMPLATEID,
         e.target,
-        import.meta.env.VITE_PUBLICKEY
+        import.meta.env.VITE_PUBLICKEY,
+        console.log(VITE_SERVICEID),
+        console.log(VITE_TEMPLATEID),
+        console.log(VITE_PUBLICKEY),
       )
       .then(
         () => {
