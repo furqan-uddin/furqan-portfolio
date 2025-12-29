@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ReactTyped } from "react-typed";
 
 function Hero() {
   const container = {
@@ -21,7 +22,7 @@ function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-batBlack">
-  
+      {/* Background Ambient Glows */}
       <div className="bg-glow top-[-120px] left-[-120px] w-[420px] h-[420px] bg-batBlue/20 dark:bg-batYellow/20" />
       <div className="bg-glow bottom-[-120px] right-[-120px] w-[360px] h-[360px] bg-purple-500/10 dark:bg-batBlue/20" />
 
@@ -31,7 +32,7 @@ function Hero() {
         animate="visible"
         className="container-custom pt-28 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center"
       >
-        
+        {/* Left Content Side */}
         <div className="text-center lg:text-left">
           <motion.div
             variants={item}
@@ -49,19 +50,29 @@ function Hero() {
           </motion.div>
 
           <motion.h1 variants={item} className="heading-hero">
-            Hi, I’m{" "}
-            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-batBlue to-indigo-500 dark:from-batYellow dark:to-yellow-200">
-              Mohammad Furqanuddin
-            </span>
+            Hi👋,
+            <div className="block">
+              {" "}
+              {/* Moves the following line to its own row */}
+              <span className="text-slate-900 dark:text-white">I’m </span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-batBlue to-indigo-500 dark:from-batYellow dark:to-yellow-300">
+                <ReactTyped
+                  strings={["Mohammad Furqanuddin;"]}
+                  typeSpeed={125}
+                  backSpeed={50}
+                  loop={true}
+                  showCursor={true}
+                  cursorChar="|"
+                />
+              </span>
+            </div>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-6 text-lg sm:text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-200"
           >
-            MERN Stack Developer
-            <span className="px-2 text-slate-400 dark:text-slate-600">/</span>
-            AI Enthusiast
+            Software Developer
           </motion.p>
 
           <motion.p
@@ -94,39 +105,115 @@ function Hero() {
                          hover:bg-slate-50 dark:hover:bg-white/5
                          transition-all active:scale-95 text-center"
             >
-              Contact Me
+              Let's Talk
             </Link>
           </motion.div>
         </div>
 
-        
+        {/* Right Visual Side - System Architecture Mockup */}
         <motion.div
           variants={item}
-          className="hidden lg:flex justify-center items-center relative"
+          className="flex justify-center items-center relative scale-75 sm:scale-90 lg:scale-100"
         >
-          <div className="absolute w-72 h-72 rounded-full bg-batBlue/10 dark:bg-batYellow/10 blur-2xl" />
+          {/* Abstract Background Grid */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-20 dark:opacity-10 pointer-events-none">
+            <div className="w-[500px] h-[500px] border border-slate-200 dark:border-white/10 rounded-full" />
+            <div className="absolute w-[350px] h-[350px] border border-slate-200 dark:border-white/10 rounded-full" />
+            <div className="absolute w-[200px] h-[200px] border border-slate-200 dark:border-white/10 rounded-full" />
+          </div>
 
-          <div
-            className="relative w-72 h-72 rounded-3xl bg-white dark:bg-batGray/40
-                          border border-slate-200/60 dark:border-white/5
-                          flex items-center justify-center overflow-hidden"
-          >
+          {/* Main Visual Container */}
+          <div className="relative w-72 sm:w-80 h-[360px] sm:h-[420px] lg:h-[450px] flex items-center justify-center">
+            {/* Central Core (AI/Logic Symbol) */}
             <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="flex flex-col items-center gap-3"
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(37,99,235,0.2)",
+                  "0 0 40px rgba(37,99,235,0.4)",
+                  "0 0 20px rgba(37,99,235,0.2)",
+                ],
+              }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="relative z-20 w-32 h-32 glass-card flex items-center justify-center rounded-[2.5rem] border border-batBlue/30 dark:border-batYellow/30"
             >
-              <div
-                className="w-16 h-16 rounded-2xl bg-white dark:bg-white/5
-                              border border-slate-200/60 dark:border-white/10
-                              flex items-center justify-center shadow-sm text-2xl"
-              >
-                ⚡
+              <div className="relative">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  className="w-16 h-16 border-t-2 border-r-2 border-batBlue dark:border-batYellow rounded-full"
+                />
+                <div className="absolute inset-0 flex items-center justify-center font-black text-2xl text-batBlue dark:text-batYellow">
+                  F
+                </div>
               </div>
-              <p className="text-sm font-medium text-slate-400 dark:text-slate-500">
-                Visualizing Ideas
-              </p>
             </motion.div>
+
+            {/* Floating Tech Nodes */}
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-10 right-0 glass-card p-4 flex items-center gap-3 shadow-xl"
+            >
+              <div className="w-2 h-2 rounded-full bg-batBlue dark:bg-batYellow animate-pulse" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                MERN_STACK
+              </span>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 20, 0] }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+              className="absolute bottom-12 left-0 glass-card p-4 flex items-center gap-3 shadow-xl"
+            >
+              <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                SYSTEM_LOGIC
+              </span>
+            </motion.div>
+
+            {/* Connecting System Lines */}
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 320 450"
+            >
+              <motion.path
+                d="M160 100 L160 50 L240 50"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-slate-200 dark:text-white/10"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              />
+              <motion.path
+                d="M160 350 L160 400 L80 400"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-slate-200 dark:text-white/10"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                  delay: 1.5,
+                }}
+              />
+            </svg>
+
+            {/* Vertical Scanning Pulse */}
+            <motion.div
+              animate={{ top: ["10%", "90%", "10%"] }}
+              transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+              className="absolute left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent via-batBlue/50 dark:via-batYellow/50 to-transparent"
+            />
           </div>
         </motion.div>
       </motion.div>
