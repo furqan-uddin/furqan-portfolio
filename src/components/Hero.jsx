@@ -50,7 +50,7 @@ function Hero() {
           </motion.div>
 
           <motion.h1 variants={item} className="heading-hero">
-            Hi👋,
+            Hi 👋,
             <div className="block">
               {" "}
               {/* Moves the following line to its own row */}
