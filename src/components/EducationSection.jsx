@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import svvvLogo from "../assets/svvvLogo.png";
-import mpBoardLogo from "../assets/mpBoardLogo.png";
+import svvvLogo from "../assets/svvvLogo.webp";
+import mpBoardLogo from "../assets/mpBoardLogo.webp";
 
 function EducationSection() {
   const timelineData = [
@@ -84,6 +84,8 @@ function EducationSection() {
                     <img
                       src={item.logo}
                       alt="Institution logo"
+                      loading="lazy"
+                      decoding="async"
                       className="w-20 h-20  rounded-full object-contain"
                     />
                   </div>
@@ -129,6 +131,8 @@ function EducationSection() {
                   <img
                     src={item.logo}
                     alt="Institution logo"
+                    loading="lazy"
+                    decoding="async"
                     className="w-20 h-20 rounded-full bg-white dark:bg-batGray p-2 border border-slate-200/60 dark:border-white/10"
                   />
                 </div>
